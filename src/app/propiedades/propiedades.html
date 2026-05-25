@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mis Propiedades | Urbania</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "secondary": "#57605f",
+                        "on-tertiary-fixed": "#261900",
+                        "on-secondary-fixed": "#141d1c",
+                        "surface-container-high": "#dee9fc",
+                        "surface-bright": "#f8f9ff",
+                        "primary-fixed": "#9df3dc",
+                        "surface-tint": "#006b59",
+                        "surface-container": "#e6eeff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#5b6563",
+                        "on-surface": "#121c2a",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#fabd32",
+                        "on-background": "#121c2a",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#27313f",
+                        "outline": "#6e7975",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-fixed": "#ffdea4",
+                        "primary-container": "#006d5b",
+                        "primary-fixed-dim": "#81d6c0",
+                        "surface-variant": "#d9e3f6",
+                        "outline-variant": "#bec9c4",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#3f4947",
+                        "on-primary-fixed-variant": "#005143",
+                        "on-primary-container": "#96ebd5",
+                        "surface-container-highest": "#d9e3f6",
+                        "secondary-fixed": "#dbe5e3",
+                        "inverse-primary": "#81d6c0",
+                        "surface-dim": "#d0dbed",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary": "#5f4400",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#00201a",
+                        "primary": "#005344",
+                        "secondary-fixed-dim": "#bfc9c7",
+                        "on-tertiary-container": "#ffd587",
+                        "surface": "#f8f9ff",
+                        "on-surface-variant": "#3e4945",
+                        "secondary-container": "#d8e2e0",
+                        "tertiary-container": "#7d5a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px",
+                        "gutter-desktop": "24px",
+                        "base": "8px",
+                        "gutter-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .property-card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant shadow-sm">
+<div class="flex justify-between items-center h-16 px-gutter-desktop max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary">Urbania</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Comprar</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Alquilar</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Servicios</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Buscar Inmobiliarias</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="chat_bubble_outline">chat_bubble_outline</button>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-variant">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged man in a charcoal suit, set against a bright, modern office background with soft bokeh. The lighting is clean and high-key, reflecting a corporate modern and trustworthy aesthetic. His expression is confident and welcoming, fitting for a high-end real estate platform user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6ABWmnraI0NJGsaKY-xVnSl_HHH2HQtwyZEqzec24Qis-xRsbjlgeBwEUqufyhWuHOgNJ7LycHtECqiAWVd3oRjkvkWir0sZDOErj7jnrBTxt-xNZddG4tdP7XZH35EQMWU-jSk9xVLlCJHcWYfbE6JPUFOHZtwKXsH9YjFgkxkR8RzSWOV6kEpd3TzS7cDq5sMeczmM7sNDEPK9ATQHeRGdrK2e_4ASnjIDVxU9dUMW6WFZDcwoamvlfVicXPgTj8UR5Qb_0QI87"/>
+</div>
+<button class="hidden lg:block bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md transition-opacity hover:opacity-90">Publicar</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Mis Propiedades</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Gestiona tus publicaciones actuales y revisa el rendimiento de tus anuncios.</p>
+</div>
+<button class="flex items-center justify-center gap-2 bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md shadow-md hover:shadow-lg transition-all transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Nueva Publicación
+            </button>
+</div>
+<!-- Filter & Search Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-4 mb-8 property-card-shadow flex flex-col lg:flex-row gap-4 items-center">
+<div class="relative w-full lg:flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-lg border border-outline-variant bg-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md" placeholder="Buscar por título, dirección o ID..." type="text"/>
+</div>
+<div class="flex items-center gap-3 w-full lg:w-auto">
+<select class="flex-1 lg:w-48 bg-transparent border border-outline-variant rounded-lg py-3 px-4 text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>Todos los estados</option>
+<option>Publicado</option>
+<option>Pendiente</option>
+<option>Vendido</option>
+</select>
+<button class="flex items-center gap-2 border border-outline-variant rounded-lg px-5 py-3 text-on-surface-variant font-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+                    Filtros
+                </button>
+</div>
+</div>
+<!-- Property Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Property Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden property-card-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A luxurious modern penthouse apartment interior with floor-to-ceiling windows overlooking a Mediterranean cityscape at sunset. The lighting is warm and golden, highlighting high-end furniture and minimalist architectural details in an emerald and sage color palette. The atmosphere is serene and ultra-premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe3IgIjLqyzqmJhIq91Dfn6DBK2FetFlUZ5EZ_6FnaJhP4A4im25l2wqR6Xy6YZ8r92-4odxrhgPefc8D_CTXSsjhz2Du_y7qpUL5qd7oekbaZp-q2e3wGfkOoaRX7ze3zMmCgijK5VlDCWhu2JHv3zFy_mB-BpTRGejv5FlZwkiomBg0vprsnttUqjjEL6AJuLbmt9EmA406bJwlN7rHfpEsQNgiGKFSaUAXwppMNlPaHx2eXFUNnmfxTvqIbHC6Ly98bBSUJ9e9l"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        Publicado
+                    </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Penthouse en Miraflores</h3>
+<span class="font-bold text-primary text-body-lg">$450,000</span>
+</div>
+<p class="text-on-surface-variant text-body-md mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+                        Av. Pardo 120, Miraflores
+                    </p>
+<div class="flex items-center gap-4 py-4 border-y border-outline-variant mb-6">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="bed">bed</span>
+                            3 Dorm.
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="bathtub">bathtub</span>
+                            2 Baños
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="square_foot">square_foot</span>
+                            120 m²
+                        </div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex-1 bg-primary text-on-primary py-2.5 rounded-lg font-label-md hover:opacity-90 transition-opacity">Editar</button>
+<button class="p-2.5 rounded-lg border border-outline-variant text-error hover:bg-error-container/20 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden property-card-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A contemporary urban apartment exterior with sleek glass balconies and greenery. The architectural design is sharp and geometric, shot during a bright morning with soft, diffused sunlight. The scene emphasizes modern city living with a focus on trust and architectural precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi1UECMutq_-P39YOn7voRStlDz0A9Q38WStIFIKNrupiqoqYhAp0WRqDWfh89BodL83hmZlxorcr30vbIijxh8LGl8AYyv-xWji-dqfKe5D9MCa2nPYdXRjYh-WXXFVfWk845pRVZrDyBCN0ppQT3rDWIeadleQ_wOYkg49l0Vlrk-L3O7iqAF4Y5p_pOBoJZsTjMphPdCzaALEypM_UcX7zL6O12K4QoAW-rYYU5hoGyT9WL6fwU43rfaEQU70EDMTCphSFe_0Fq"/>
+<div class="absolute top-4 left-4 bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                        Borrador
+                    </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Dpto. de Lujo San Isidro</h3>
+<span class="font-bold text-primary text-body-lg">$380,000</span>
+</div>
+<p class="text-on-surface-variant text-body-md mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+                        Calle Los Olivos 540, San Isidro
+                    </p>
+<div class="flex items-center gap-4 py-4 border-y border-outline-variant mb-6">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="bed">bed</span>
+                            2 Dorm.
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="bathtub">bathtub</span>
+                            2 Baños
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="square_foot">square_foot</span>
+                            95 m²
+                        </div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex-1 bg-primary text-on-primary py-2.5 rounded-lg font-label-md hover:opacity-90 transition-opacity">Editar</button>
+<button class="p-2.5 rounded-lg border border-outline-variant text-error hover:bg-error-container/20 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden property-card-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Minimalist modern living room with large glass doors opening to a lush garden. The interior is decorated with white oak floors and sage green accents. Soft morning light creates deep shadows and bright highlights, giving a sense of calm and luxury. High-end residential photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv1UWzDTfoNphpPnNaNfJQYX3sMFi3FfxzLfr_YmRAj-5sbXnd4noq29ir8hAEAHMVFzg48dZprItKf6FGpKDeWa9CF7-bWeEc6Z73xwU9Zjawk6ZXqp-qyUwzSrY1lHAYXhsktznbFQk_B3nSUV801tE4gxdb5EzIgyd-M8FFc8DNAL234sEszgd98s-jNePuIt4rUrRWSGcqqy83WnIlh3zubM9ewue220nLyvZfpHQxWz7RGq33pYSmE-ZjqWhD-9D23pW-QKaS"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        Publicado
+                    </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Moderno Loft Barranco</h3>
+<span class="font-bold text-primary text-body-lg">$210,000</span>
+</div>
+<p class="text-on-surface-variant text-body-md mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+                        Av. Grau 890, Barranco
+                    </p>
+<div class="flex items-center gap-4 py-4 border-y border-outline-variant mb-6">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="bed">bed</span>
+                            1 Dorm.
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="bathtub">bathtub</span>
+                            1 Baño
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="square_foot">square_foot</span>
+                            65 m²
+                        </div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex-1 bg-primary text-on-primary py-2.5 rounded-lg font-label-md hover:opacity-90 transition-opacity">Editar</button>
+<button class="p-2.5 rounded-lg border border-outline-variant text-error hover:bg-error-container/20 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden property-card-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a high-end designer kitchen in a modern apartment. Dark emerald marble countertops are paired with brass fixtures and minimalist white cabinetry. The lighting is crisp and cool, highlighting the premium finishes and clean lines of the design system. Professional real estate showcase." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWhvnVygp7wzZAVaBE4wmsQFfph4bkYw5Nv5cltoo1q7TlI9QZ0jREd8Eg7JBIDWHfoV9RAR2c1moULM7FuS8mXd2TWMCUA10b40gXZmmQhqAIs4wuvafJIvmuXeiX1mPfae4uH4niid20g2bwCah5ZXwYun2gp0u1zDZJ4vZa2JpYgFdbFnul3ICwn5ZTi76cB6m-bJ1goyRrCX_cQgo2mw8SeHpmUGPx4lYKTgsntmOZoXv09oaua3-U0ZKqcDuLPSDKgONz1Kj8"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-label-sm" data-icon="visibility_off">visibility_off</span>
+                        Oculto
+                    </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Dpto. Vista al Mar</h3>
+<span class="font-bold text-primary text-body-lg">$550,000</span>
+</div>
+<p class="text-on-surface-variant text-body-md mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+                        Malecón Cisneros, Miraflores
+                    </p>
+<div class="flex items-center gap-4 py-4 border-y border-outline-variant mb-6">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="bed">bed</span>
+                            4 Dorm.
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="bathtub">bathtub</span>
+                            3 Baños
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="square_foot">square_foot</span>
+                            180 m²
+                        </div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex-1 bg-primary text-on-primary py-2.5 rounded-lg font-label-md hover:opacity-90 transition-opacity">Editar</button>
+<button class="p-2.5 rounded-lg border border-outline-variant text-error hover:bg-error-container/20 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty State / Add New Placeholder -->
+<button class="border-2 border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center p-8 text-on-surface-variant hover:border-primary hover:text-primary transition-all group bg-surface-container-low/50">
+<span class="material-symbols-outlined text-[48px] mb-4 transition-transform group-hover:scale-110" data-icon="add_circle">add_circle</span>
+<span class="font-headline-md text-headline-md">Añadir otra propiedad</span>
+<span class="text-body-md mt-2 opacity-70">Publica un nuevo departamento hoy</span>
+</button>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex items-center justify-center gap-2">
+<button class="w-10 h-10 rounded-lg flex items-center justify-center border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">2</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">3</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container dark:bg-on-surface w-full py-10 mt-16 border-t border-surface-container-high">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter-desktop max-w-container-max mx-auto">
+<div class="mb-6 md:mb-0">
+<div class="text-headline-sm font-headline-sm font-bold text-primary mb-2">Urbania</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">© 2024 Urbania Real Estate. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Terms of Service</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Privacy Policy</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Contact Support</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">About Us</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for hover states on property cards
+        document.querySelectorAll('.bg-surface-container-lowest').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+            });
+        });
+
+        // Initialize transitions for images
+        document.querySelectorAll('img').forEach(img => {
+            img.style.transition = 'transform 0.5s ease';
+        });
+    </script>
+</body></html>

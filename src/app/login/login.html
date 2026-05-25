@@ -1,0 +1,341 @@
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest fixed top-0 w-full z-50 border-b border-outline-variant shadow-sm h-16">
+  <div class="flex justify-between items-center h-full px-gutter-desktop max-w-container-max mx-auto">
+
+    <!-- Logo -->
+    <div
+      class="text-headline-md font-headline-md font-bold text-primary cursor-pointer flex items-center gap-2"
+      routerLink="/"
+    >
+      🏡 Urbania
+    </div>
+
+    <!-- Nav Links -->
+    <div class="hidden md:flex gap-8">
+
+      <a
+        routerLink="/"
+        class="text-on-surface-variant font-medium text-label-md hover:text-primary transition-colors duration-200"
+      >
+        🏘️ Comprar
+      </a>
+
+      <a
+        routerLink="/"
+        class="text-on-surface-variant font-medium text-label-md hover:text-primary transition-colors duration-200"
+      >
+        🔑 Alquilar
+      </a>
+
+      <a
+        routerLink="/"
+        class="text-on-surface-variant font-medium text-label-md hover:text-primary transition-colors duration-200"
+      >
+        🛠️ Servicios
+      </a>
+
+      <a
+        routerLink="/"
+        class="text-on-surface-variant font-medium text-label-md hover:text-primary transition-colors duration-200"
+      >
+        🏢 Buscar Inmobiliarias
+      </a>
+
+    </div>
+
+    <!-- Button -->
+    <div class="flex items-center gap-4">
+
+      <button
+        routerLink="/publicar"
+        class="bg-primary text-white px-6 py-2 rounded-xl font-bold shadow-md hover:scale-105 hover:opacity-90 transition-all duration-300"
+      >
+        📢 Publicar
+      </button>
+
+    </div>
+
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="min-h-screen pt-16 flex items-stretch">
+
+  <!-- LEFT -->
+  <section class="hidden lg:flex flex-1 relative items-center justify-center overflow-hidden bg-primary-container">
+
+    <div class="absolute inset-0 z-0">
+      <img
+        class="w-full h-full object-cover opacity-60"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAytE7k8psjosMp0p0LkKPPIuUJ2wCvVzx4gyC8HlbxCq6zuPwm4ntu7kk6m3QdEW_05kOW2jqs46wuvRRA5C-sSEXRu8ABwWpJfXghs4bhXT0RB7tjxFCs4TVjzN7vL27EmhBzXPMVTFBgw5G3BXKBRoEaXR86XGzKK3nvlFb16Trf8pTtLQq560XpnbYDp5an_VItR0fcgVzoS0UO4ujJ_oSLaoAImSa-SVebXfD5bVg76pKxTepSN8dMgq4a4FzQNKkr5eFmBhri"
+        alt="Urbania"
+      >
+    </div>
+
+    <div class="relative z-10 p-12 max-w-xl text-on-primary-container">
+
+      <h1 class="font-display-lg text-display-lg mb-6">
+        🏡 Encuentra el lugar donde tu historia comienza.
+      </h1>
+
+      <p class="font-body-lg text-body-lg opacity-90">
+        Accede a la red inmobiliaria más exclusiva y descubre propiedades
+        que se adaptan perfectamente a tu estilo de vida.
+      </p>
+
+      <div class="mt-12 flex gap-4">
+
+        <div class="flex flex-col items-center">
+          <span class="text-headline-lg font-headline-lg">🏠 +20k</span>
+          <span class="text-label-sm font-label-sm uppercase tracking-wider">
+            Propiedades
+          </span>
+        </div>
+
+        <div class="w-px h-12 bg-on-primary-container opacity-20"></div>
+
+        <div class="flex flex-col items-center">
+          <span class="text-headline-lg font-headline-lg">🌎 15</span>
+          <span class="text-label-sm font-label-sm uppercase tracking-wider">
+            Países
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RIGHT -->
+  <section class="flex-1 flex items-center justify-center p-gutter-mobile lg:p-12 bg-surface">
+
+    <div class="w-full max-w-[440px] animate-fade-in-up">
+
+      <!-- Welcome -->
+      <div class="mb-10">
+
+        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">
+          👋 Bienvenido de nuevo
+        </h2>
+
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          Ingresa tus credenciales para acceder a tu cuenta.
+        </p>
+
+      </div>
+
+      <!-- Divider -->
+      <div class="relative flex items-center mb-8">
+
+        <div class="flex-grow border-t border-outline-variant"></div>
+
+        <span class="flex-shrink mx-4 text-label-sm text-outline font-label-sm uppercase tracking-widest">
+          ✉️ o con email
+        </span>
+
+        <div class="flex-grow border-t border-outline-variant"></div>
+
+      </div>
+
+      <!-- FORM -->
+      <form class="space-y-6" (ngSubmit)="ingresar()">
+
+        <!-- ERROR -->
+        <div
+          *ngIf="error()"
+          class="bg-error text-on-error p-3 rounded-lg text-label-md font-bold flex items-center gap-2 animate-bounce"
+        >
+          ⚠️ {{ error() }}
+        </div>
+
+        <!-- EMAIL -->
+        <div class="space-y-2">
+
+          <label
+            class="font-label-md text-label-md text-on-surface-variant block"
+            for="email"
+          >
+            📧 Correo Electrónico
+          </label>
+
+          <div class="relative">
+
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl">
+              📩
+            </span>
+
+            <input
+              [(ngModel)]="email"
+              name="email"
+              class="w-full pl-12 pr-4 py-3 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all duration-200 text-body-md"
+              id="email"
+              placeholder="ejemplo@urbania.com"
+              type="email"
+            >
+
+          </div>
+
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="space-y-2">
+
+          <div class="flex justify-between items-center">
+
+            <label
+              class="font-label-md text-label-md text-on-surface-variant block"
+              for="password"
+            >
+              🔒 Contraseña
+            </label>
+
+            <a
+              class="text-label-sm font-label-sm text-primary hover:underline transition-all"
+              href="#"
+            >
+              ¿Olvidaste tu contraseña?
+            </a>
+
+          </div>
+
+          <div class="relative">
+
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl">
+              🔑
+            </span>
+
+            <input
+              [(ngModel)]="password"
+              name="password"
+              class="w-full pl-12 pr-12 py-3 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all duration-200 text-body-md"
+              id="password"
+              placeholder="••••••••"
+              [type]="mostrarPassword() ? 'text' : 'password'"
+            >
+
+            <button
+              (click)="alternarVisibilidadPassword()"
+              class="absolute right-4 top-1/2 -translate-y-1/2 hover:scale-110 transition-transform"
+              type="button"
+            >
+              <span class="text-xl">
+                {{ mostrarPassword() ? '🙈' : '👁️' }}
+              </span>
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CHECKBOX -->
+        <div class="flex items-center gap-2">
+
+          <input
+            [(ngModel)]="recordarme"
+            name="recordarme"
+            class="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary"
+            id="remember"
+            type="checkbox"
+          >
+
+          <label
+            class="text-label-md font-label-md text-on-surface-variant"
+            for="remember"
+          >
+            💾 Recordarme en este dispositivo
+          </label>
+
+        </div>
+
+        <!-- LOGIN BUTTON -->
+        <button
+          [disabled]="cargando()"
+          class="w-full py-4 bg-primary text-white font-bold text-lg rounded-xl shadow-xl hover:bg-primary-container hover:scale-[1.02] transition-all duration-300 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+          type="submit"
+        >
+
+          <span *ngIf="!cargando()" class="flex items-center justify-center gap-2">
+            🚀 Iniciar Sesión
+          </span>
+
+          <span *ngIf="cargando()" class="flex items-center justify-center gap-2">
+            ⏳ Ingresando...
+          </span>
+
+        </button>
+
+      </form>
+
+      <!-- REGISTER -->
+      <p class="mt-8 text-center text-body-md text-on-surface-variant">
+
+        ¿No tienes una cuenta?
+
+        <a
+          routerLink="/"
+          class="text-primary font-bold hover:underline transition-all"
+        >
+          ✨ Regístrate gratis
+        </a>
+
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full py-10 bg-surface-container border-t border-outline-variant">
+
+  <div class="flex flex-col md:flex-row justify-between items-center px-gutter-desktop max-w-container-max mx-auto gap-6">
+
+    <div class="flex flex-col items-center md:items-start">
+
+      <div class="text-headline-sm font-headline-sm font-bold text-primary mb-2">
+        🏡 Urbania
+      </div>
+
+      <p class="text-label-sm font-label-sm text-on-surface-variant">
+        © 2024 Urbania Real Estate. Todos los derechos reservados.
+      </p>
+
+    </div>
+
+    <div class="flex gap-8 flex-wrap justify-center">
+
+      <a
+        class="text-label-sm font-label-sm text-on-surface-variant hover:underline decoration-primary transition-all"
+        href="#"
+      >
+        📄 Términos
+      </a>
+
+      <a
+        class="text-label-sm font-label-sm text-on-surface-variant hover:underline decoration-primary transition-all"
+        href="#"
+      >
+        🔐 Privacidad
+      </a>
+
+      <a
+        class="text-label-sm font-label-sm text-on-surface-variant hover:underline decoration-primary transition-all"
+        href="#"
+      >
+        💬 Soporte
+      </a>
+
+      <a
+        class="text-label-sm font-label-sm text-on-surface-variant hover:underline decoration-primary transition-all"
+        href="#"
+      >
+        ℹ️ Nosotros
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>

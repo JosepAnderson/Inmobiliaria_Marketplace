@@ -1,0 +1,400 @@
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm border-b border-outline-variant">
+<nav class="flex justify-between items-center h-16 px-gutter-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-md font-bold text-primary">🏙️ Urbania</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">🏡 Comprar</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">🔑 Alquilar</a>
+
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">🏢 Buscar Inmobiliarias</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-4">
+
+
+</div>
+<button routerLink="/login" class="text-on-surface-variant font-medium px-4 py-2 hover:text-primary transition-colors">👤 Ingresar</button>
+<button routerLink="/publicar" class="bg-primary-container text-on-primary-container font-bold px-6 py-2 rounded-lg hover:opacity-90 transition-opacity">📢 Publicar</button>
+</div>
+</nav>
+</header>
+
+<main class="pt-24 pb-16 px-4 md:px-gutter-desktop max-w-container-max mx-auto">
+
+<div class="flex flex-col gap-2 mb-10">
+<h1 class="text-display-lg font-display-lg text-primary">🏠 Publicar mi propiedad</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl">
+✨ Llegó el momento de encontrar al comprador ideal. Completa los detalles de tu departamento para publicarlo hoy mismo.
+</p>
+</div>
+
+<!-- Success Messages -->
+<div *ngIf="publicado()" class="mb-6 bg-primary text-on-primary p-4 rounded-lg flex items-center gap-3 animate-pulse">
+<span class="material-symbols-outlined">check_circle</span>
+<div>
+<p class="font-bold">🎉 ¡Propiedad publicada exitosamente!</p>
+<p class="text-sm opacity-90">Tu anuncio ya está visible para miles de compradores potenciales.</p>
+</div>
+</div>
+
+<div *ngIf="guardadoBorrador()" class="mb-6 bg-primary text-on-primary p-4 rounded-lg flex items-center gap-3 animate-pulse">
+<span class="material-symbols-outlined">save</span>
+<div>
+<p class="font-bold">💾 Borrador guardado correctamente</p>
+<p class="text-sm opacity-90">Puedes continuar editando tu anuncio después.</p>
+</div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+<!-- Form Sections -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+
+<!-- Media Upload Section -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.05)]">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">📸</span>
+<h2 class="text-headline-md font-headline-md text-on-surface"> Fotos de la propiedad</h2>
+</div>
+
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-12 flex flex-col items-center justify-center text-center hover:bg-surface-container-low transition-colors cursor-pointer group">
+
+<div class="bg-secondary-container w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">add_a_photo</span>
+</div>
+
+<p class="text-body-lg font-bold text-on-surface">🖼️ Haz clic para subir o arrastra tus fotos aquí</p>
+
+<p class="text-body-md text-on-surface-variant mt-2">
+✨ Sube al menos 5 fotos de alta resolución para atraer más interesados.
+</p>
+
+<button class="mt-6 border border-primary text-primary font-bold px-6 py-2 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors">
+📂 Seleccionar Archivos
+</button>
+
+</div>
+</section>
+
+<!-- Basic Information -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.05)]">
+
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">📝</span>
+<h2 class="text-headline-md font-headline-md text-on-surface"> Información Básica</h2>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+<div class="md:col-span-2">
+<label class="block text-label-md text-on-surface-variant mb-2">🏷️ Título de la publicación</label>
+
+<input [(ngModel)]="titulo"
+class="w-full bg-surface border border-outline-variant rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+placeholder="Ej: Moderno departamento de estreno en Miraflores"
+type="text">
+</div>
+
+<div class="md:col-span-2">
+<label class="block text-label-md text-on-surface-variant mb-2">📄 Descripción detallada</label>
+
+<textarea [(ngModel)]="descripcion"
+class="w-full bg-surface border border-outline-variant rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+placeholder="Describe los acabados, la zona, la vista y lo que hace único a tu departamento..."
+rows="4"></textarea>
+</div>
+
+<div>
+<label class="block text-label-md text-on-surface-variant mb-2">💰 Precio (S/)</label>
+
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">S/</span>
+
+<input [(ngModel)]="precioSoles"
+class="w-full bg-surface border border-outline-variant rounded-lg p-3 pl-10 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+placeholder="0.00"
+type="number">
+</div>
+</div>
+
+<div>
+<label class="block text-label-md text-on-surface-variant mb-2">💵 Precio (USD)</label>
+
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">$</span>
+
+<input [(ngModel)]="precioDolares"
+class="w-full bg-surface border border-outline-variant rounded-lg p-3 pl-10 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+placeholder="0.00"
+type="number">
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Characteristics -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.05)]">
+
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">🏢</span>
+<h2 class="text-headline-md font-headline-md text-on-surface"> Características</h2>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface-variant">📐 Área Total (m²)</label>
+
+<div class="flex items-center bg-surface border border-outline-variant rounded-lg p-3">
+<span class="material-symbols-outlined text-outline-variant mr-2">straighten</span>
+
+<input [(ngModel)]="area"
+class="w-full bg-transparent focus:outline-none"
+type="number">
+</div>
+</div>
+
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface-variant">🛏️ Dormitorios</label>
+
+<div class="flex items-center bg-surface border border-outline-variant rounded-lg p-3">
+<span class="material-symbols-outlined text-outline-variant mr-2">bed</span>
+
+<input [(ngModel)]="dormitorios"
+class="w-full bg-transparent focus:outline-none"
+type="number">
+</div>
+</div>
+
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface-variant">🛁 Baños</label>
+
+<div class="flex items-center bg-surface border border-outline-variant rounded-lg p-3">
+<span class="material-symbols-outlined text-outline-variant mr-2">bathtub</span>
+
+<input [(ngModel)]="banos"
+class="w-full bg-transparent focus:outline-none"
+type="number">
+</div>
+</div>
+
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface-variant">🚗 Estacionamientos</label>
+
+<div class="flex items-center bg-surface border border-outline-variant rounded-lg p-3">
+<span class="material-symbols-outlined text-outline-variant mr-2">directions_car</span>
+
+<input [(ngModel)]="estacionamientos"
+class="w-full bg-transparent focus:outline-none"
+type="number">
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Location -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.05)]">
+
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">📍</span>
+<h2 class="text-headline-md font-headline-md text-on-surface"> Ubicación</h2>
+</div>
+
+<div class="flex flex-col gap-6">
+
+<div>
+<label class="block text-label-md text-on-surface-variant mb-2">📌 Dirección completa</label>
+
+<div class="flex gap-2">
+<input [(ngModel)]="direccion"
+class="flex-1 bg-surface border border-outline-variant rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+placeholder="Ej: Av. Pardo 123, Miraflores, Lima"
+type="text">
+
+<button class="bg-secondary-container text-primary font-bold px-4 rounded-lg hover:bg-outline-variant transition-colors">
+✅ Validar
+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Contact Details -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.05)]">
+
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">📞</span>
+<h2 class="text-headline-md font-headline-md text-on-surface"> Información de Contacto</h2>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+<div>
+<label class="block text-label-md text-on-surface-variant mb-2">👤 Nombre del anunciante</label>
+
+<input [(ngModel)]="nombreAnunciante"
+class="w-full bg-surface border border-outline-variant rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+type="text">
+</div>
+
+<div>
+<label class="block text-label-md text-on-surface-variant mb-2">📱 Teléfono de contacto</label>
+
+<div class="flex items-center bg-surface border border-outline-variant rounded-lg p-3">
+<span class="text-on-surface-variant mr-2">+51</span>
+
+<input [(ngModel)]="telefonoContacto"
+class="w-full bg-transparent focus:outline-none"
+type="tel">
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="flex justify-end gap-4 mt-4">
+
+<button (click)="guardarBorrador()"
+[disabled]="cargando()"
+class="px-8 py-3 rounded-lg border border-outline text-on-surface-variant font-bold hover:bg-surface-variant transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+
+<span *ngIf="!cargando()">💾 Guardar Borrador</span>
+
+<span *ngIf="cargando()" class="flex items-center gap-2">
+<span class="animate-spin">⟳</span> Guardando...
+</span>
+
+</button>
+
+<button (click)="publicarPropiedad()"
+[disabled]="cargando()"
+class="px-10 py-3 rounded-lg bg-primary-container text-on-primary-container font-bold text-headline-sm shadow-lg hover:scale-[1.02] transition-transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
+
+<span *ngIf="!cargando()">🚀 Publicar Propiedad</span>
+
+<span *ngIf="cargando()" class="flex items-center gap-2">
+<span class="animate-spin">⟳</span> Publicando...
+</span>
+
+</button>
+
+</div>
+</div>
+
+<!-- Sidebar Guidance -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+
+<div class="bg-primary text-on-primary p-8 rounded-xl sticky top-24 shadow-xl">
+
+<h3 class="text-headline-md font-headline-md mb-4">⭐ ¿Por qué publicar en Urbania?</h3>
+
+<ul class="flex flex-col gap-4">
+
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined">📈</span>
+
+<div>
+<p class="font-bold"> Máximo alcance</p>
+<p class="text-sm opacity-80">Más de 2 millones de visitas mensuales buscando su próximo hogar.</p>
+</div>
+</li>
+
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined">✅</span>
+
+<div>
+<p class="font-bold"> Confianza total</p>
+<p class="text-sm opacity-80">Validamos cada publicación para garantizar leads de calidad.</p>
+</div>
+</li>
+
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined">🎧</span>
+
+<div>
+<p class="font-bold"> Soporte 24/7</p>
+<p class="text-sm opacity-80">Estamos aquí para ayudarte en cada paso de tu venta.</p>
+</div>
+</li>
+
+</ul>
+
+<div class="mt-8 p-4 bg-white/10 rounded-lg backdrop-blur-sm">
+<p class="text-sm font-medium italic">
+"🏡 Vendí mi departamento en menos de 15 días. La plataforma es intuitiva y los leads son reales."
+</p>
+
+<p class="text-xs mt-2 opacity-70">— Maria G., Lima</p>
+</div>
+
+</div>
+
+<div class="bg-surface-container-high p-8 rounded-xl">
+
+<h3 class="text-headline-sm font-headline-sm text-primary mb-4">💡 Tips para una venta rápida</h3>
+
+<div class="flex flex-col gap-4">
+
+<div class="bg-surface-container-lowest p-4 rounded-lg flex gap-3 items-center">
+<span class="material-symbols-outlined text-primary">☀️</span>
+<p class="text-label-md"> Usa fotos con luz natural.</p>
+</div>
+
+<div class="bg-surface-container-lowest p-4 rounded-lg flex gap-3 items-center">
+<span class="material-symbols-outlined text-primary">💸</span>
+<p class="text-label-md"> Coloca un precio competitivo.</p>
+</div>
+
+<div class="bg-surface-container-lowest p-4 rounded-lg flex gap-3 items-center">
+<span class="material-symbols-outlined text-primary">✍️</span>
+<p class="text-label-md">Sé detallista en la descripción.</p>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-10 bg-surface-container">
+
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter-desktop max-w-container-max mx-auto gap-8">
+
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-headline-sm font-headline-sm font-bold text-primary">🏙️ Urbania</span>
+
+<p class="text-label-sm text-on-surface-variant">
+© 2024 Urbania Real Estate. All rights reserved.
+</p>
+</div>
+
+<div class="flex flex-wrap justify-center gap-6">
+<a routerLink="/" class="text-body-md text-on-surface-variant hover:underline decoration-primary">📜 Terms of Service</a>
+
+<a routerLink="/" class="text-body-md text-on-surface-variant hover:underline decoration-primary">🔒 Privacy Policy</a>
+
+<a routerLink="/" class="text-body-md text-on-surface-variant hover:underline decoration-primary">📩 Contact Support</a>
+
+<a routerLink="/" class="text-body-md text-on-surface-variant hover:underline decoration-primary">🏢 About Us</a>
+</div>
+
+<div class="flex gap-4">
+
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-primary-container hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-base">public</span>
+</div>
+
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-primary-container hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-base">share</span>
+</div>
+
+</div>
+</div>
+</footer>

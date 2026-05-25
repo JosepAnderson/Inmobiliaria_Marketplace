@@ -1,0 +1,4 @@
+/* Puedes dejar este archivo vacío si ya tienes Tailwind configurado globalmente */
+:host {
+  display: block;
+}
