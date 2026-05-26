@@ -1,0 +1,110 @@
+/* =========================================
+   URBANIA PRO - ESTILOS DE ALTA GAMA
+   ========================================= */
+
+:host {
+  display: block;
+  background-color: #f8fafc; /* Fondo gris muy suave */
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+}
+
+/* --- NAVBAR PROFESIONAL --- */
+nav {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+/* --- FILTROS DE BÚSQUEDA --- */
+.bg-surface-container {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 8px 16px !important;
+  border-radius: 99px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #374151 !important;
+  transition: all 0.2s ease;
+}
+
+.bg-surface-container:hover {
+  background: #f1f5f9 !important;
+}
+
+/* --- BENTO GRID (IMÁGENES) --- */
+.bento-grid {
+  border-radius: 20px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1) !important;
+}
+
+/* --- PANEL DERECHO (CARD DE CONTACTO) --- */
+.sticky-sidebar {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05) !important;
+}
+
+/* --- INPUTS CORPORATIVOS --- */
+input, textarea {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  font-size: 14px !important;
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  border-color: #065f46 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(6, 95, 70, 0.1) !important;
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+button.bg-primary {
+  background: #065f46 !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  font-weight: 700 !important;
+  color: white !important;
+  transition: background 0.2s ease;
+}
+
+button.bg-primary:hover {
+  background: #047857 !important;
+}
+
+/* Botón WhatsApp */
+.border-2.border-\[\#25D366\] {
+  border-color: #25d366 !important;
+  color: #25d366 !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  font-weight: 700 !important;
+}
+
+/* --- TIPOGRAFÍA --- */
+h1 {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.text-primary {
+  color: #065f46 !important;
+}
+
+/* --- MAPA --- */
+.rounded-xl.overflow-hidden {
+  border-radius: 20px !important;
+}
+
+/* --- FOOTER --- */
+footer {
+  background: #eff6ff !important; /* Azul muy claro para diferenciar */
+  border-top: 1px solid #dbeafe !important;
+}

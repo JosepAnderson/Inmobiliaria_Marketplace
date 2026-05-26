@@ -1,0 +1,103 @@
+/* =========================================
+   URBANIA RECLAMACIONES - ESTILO PROFESIONAL
+   ========================================= */
+
+:host {
+  display: block;
+  background-color: #f8fafc;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1e293b;
+}
+
+/* --- TÍTULOS Y CABECERA --- */
+h1 {
+  font-size: 36px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.8px !important;
+  color: #065f46 !important;
+}
+
+.text-headline-md {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+}
+
+/* --- CONTENEDORES DE FORMULARIO --- */
+.custom-shadow {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* --- INPUTS Y TEXTAREAS --- */
+input, textarea {
+  background: #fcfcfd !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  transition: all 0.25s ease !important;
+}
+
+input:focus, textarea:focus {
+  border-color: #065f46 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(6, 95, 70, 0.08) !important;
+}
+
+/* --- BOTONES --- */
+button[type="submit"] {
+  background: #065f46 !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+  font-size: 16px !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+}
+
+button[type="submit"]:hover {
+  background: #047857 !important;
+  transform: translateY(-1px);
+}
+
+/* --- SECCIÓN DE ARCHIVO ADJUNTO --- */
+button[type="button"] {
+  border: 2px dashed #cbd5e1 !important;
+  border-radius: 12px !important;
+  color: #64748b !important;
+}
+
+button[type="button"]:hover {
+  border-color: #065f46 !important;
+  background: #f0fdf4 !important;
+  color: #065f46 !important;
+}
+
+/* --- CARDS DE TIPO DE INCIDENCIA --- */
+label.hover\:bg-surface-container-low:hover {
+  background: #f8fafc !important;
+  border-color: #065f46 !important;
+}
+
+/* --- SECCIÓN INFORMATIVA (INFORMACIÓN ADICIONAL) --- */
+.bg-secondary-container\/30 {
+  background: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+}
+
+.text-on-secondary-container {
+  color: #065f46 !important;
+}
+
+/* --- IMAGEN DECORATIVA --- */
+.rounded-2xl.overflow-hidden {
+  border-radius: 24px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* --- FOOTER --- */
+footer {
+  background: #ffffff !important;
+  border-top: 1px solid #e2e8f0 !important;
+}

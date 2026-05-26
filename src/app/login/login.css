@@ -1,0 +1,109 @@
+/* =========================
+   URBANIA LOGIN - ESTILO PROFESIONAL
+   ========================= */
+
+/* Reseteo y fuentes limpias */
+:host {
+  display: block;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+header {
+  background: white !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  box-shadow: none !important;
+}
+
+.text-primary { color: #065f46 !important; }
+
+/* BOTON NAVBAR */
+header button {
+  background: #065f46 !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  padding: 8px 20px !important;
+}
+
+/* SECCION IZQUIERDA (IMAGEN) */
+.bg-primary-container {
+  background: #065f46 !important;
+}
+
+/* Ajuste del texto sobre la imagen */
+h1.font-display-lg {
+  font-size: 44px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1.5px !important;
+  color: white !important;
+}
+
+/* SECCION DERECHA (LOGIN) */
+section.bg-surface {
+  background: white !important;
+}
+
+/* Títulos del form */
+h2 {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+}
+
+/* INPUTS PROFESIONALES */
+input[type="email"], 
+input[type="password"] {
+  border: 1px solid #d1d5db !important;
+  background: #ffffff !important;
+  padding: 14px 16px !important;
+  border-radius: 10px !important;
+  font-size: 15px !important;
+}
+
+input:focus {
+  border-color: #065f46 !important;
+  box-shadow: 0 0 0 3px rgba(6, 95, 70, 0.1) !important;
+}
+
+/* BOTON INGRESAR */
+button[type="submit"] {
+  background: #065f46 !important;
+  border-radius: 10px !important;
+  padding: 16px !important;
+  font-size: 16px !important;
+  transition: background 0.3s ease !important;
+}
+
+button[type="submit"]:hover {
+  background: #064e3b !important;
+}
+
+/* DIVISOR (O CON EMAIL) */
+.border-outline-variant {
+  border-color: #e5e7eb !important;
+}
+
+.text-outline {
+  color: #6b7280 !important;
+  font-size: 12px !important;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+}
+
+/* LINKS Y AYUDA */
+a {
+  color: #065f46 !important;
+  font-weight: 600 !important;
+}
+
+/* ELIMINAR LOS EMOJIS SI QUIERES EL LOOK 1:1 DE LA IMAGEN */
+/* Si deseas mantenerlos, borra estas líneas */
+span[class*="text-xl"] { display: none !important; }
+input { padding-left: 16px !important; } 
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  h1.font-display-lg { font-size: 32px !important; }
+}

@@ -1,0 +1,91 @@
+/* =========================================
+   URBANIA LEGAL - ESTILO CORPORATIVO
+   ========================================= */
+
+:host {
+  display: block;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* --- HERO SECTION --- */
+.bg-primary-container {
+  background: #065f46 !important; /* Verde Corporativo */
+  border-radius: 20px !important;
+  position: relative;
+}
+
+.text-display-lg {
+  color: white !important;
+  font-size: 48px !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px !important;
+}
+
+/* --- SIDEBAR (CONTENIDO) --- */
+aside .p-6 {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+}
+
+aside nav a {
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+
+/* Resaltado del enlace activo */
+aside nav a.text-primary {
+  color: #065f46 !important;
+  font-weight: 700 !important;
+}
+
+/* --- CONTENIDO LEGAL --- */
+article {
+  background: #ffffff !important;
+  padding: 40px !important;
+  border-radius: 16px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+h2.text-headline-md {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #065f46 !important;
+  margin-bottom: 16px !important;
+}
+
+.text-body-md {
+  line-height: 1.7 !important;
+  color: #475569 !important;
+}
+
+/* Caja de advertencia estilizada */
+.border-l-4.border-primary {
+  background: #f0fdf4 !important;
+  border-left-color: #065f46 !important;
+}
+
+/* --- BOTONES DE AYUDA --- */
+.bg-primary {
+  background: #065f46 !important;
+  border-radius: 8px !important;
+  transition: 0.3s ease;
+}
+
+.bg-primary:hover {
+  background: #047857 !important;
+}
+
+/* --- FOOTER DE LEGAL --- */
+.bg-surface-container-high {
+  background: #f1f5f9 !important;
+  border-radius: 16px !important;
+}
+
+footer {
+  background: #ffffff !important;
+  border-top: 1px solid #e2e8f0 !important;
+}

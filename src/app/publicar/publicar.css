@@ -1,0 +1,90 @@
+/* =========================================
+   URBANIA "PUBLICAR PROPIEDAD" - CSS PROFESIONAL
+   ========================================= */
+
+:host {
+  display: block;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* --- SECCIONES DE FORMULARIO --- */
+section {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* --- INPUTS Y TEXTAREAS --- */
+input, textarea {
+  background: #fcfcfd !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  font-size: 15px !important;
+  transition: all 0.25s ease !important;
+}
+
+input:focus, textarea:focus {
+  border-color: #065f46 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(6, 95, 70, 0.08) !important;
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+button[routerLink="/publicar"], 
+button.bg-primary-container {
+  background: #065f46 !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  padding: 12px 24px !important;
+  transition: all 0.3s ease !important;
+}
+
+button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* --- SIDEBAR (CARD DE CONFIANZA) --- */
+.bg-primary {
+  background: #065f46 !important;
+  border-radius: 20px !important;
+  color: #ffffff !important;
+  box-shadow: 0 20px 25px -5px rgba(6, 95, 70, 0.2) !important;
+}
+
+/* --- TIPS RÁPIDOS --- */
+.bg-surface-container-lowest {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+}
+
+/* --- TIPOGRAFÍA --- */
+h1.text-display-lg {
+  font-size: 40px !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px !important;
+  color: #065f46 !important;
+}
+
+h2.text-headline-md {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+}
+
+/* --- FOOTER --- */
+footer {
+  border-top: 1px solid #e2e8f0 !important;
+  background: #ffffff !important;
+}
